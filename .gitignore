@@ -1,0 +1,53 @@
+# ============ Python ============
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# ============ 环境变量与密钥 ============
+.env
+.env.*
+!.env.example
+
+# ============ 本地数据文件（SQLite） ============
+data/*.db
+data/*.db-shm
+data/*.db-wal
+data/*.sqlite3
+
+# ============ Node / 前端构建产物 ============
+node_modules/
+frontend/node_modules/
+mobile/node_modules/
+frontend/dist/
+mobile/dist/
+.pnpm-store/
+npm-debug.log*
+yarn-error.log*
+.package-lock.json.tmp
+
+# ============ 日志 ============
+*.log
+temp_uvicorn.log
+logs/
+
+# ============ 编辑器与系统 ============
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+
+# ============ 其它临时文件 ============
+*.bak
+*.orig
+*.tmp

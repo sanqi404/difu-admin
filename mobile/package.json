@@ -1,0 +1,30 @@
+{
+  "name": "difu-mobile",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "地府幽冥政务中台 · 移动端 H5 客户端",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "typecheck": "vue-tsc --noEmit",
+    "preview": "vite preview --port 5175"
+  },
+  "dependencies": {
+    "axios": "^1.21.1",
+    "pinia": "^4.1.0",
+    "vant": "^4.9.21",
+    "vue": "^3.5.44",
+    "vue-router": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@vitejs/plugin-vue": "^6.0.11",
+    "@vue/tsconfig": "^0.9.1",
+    "rollup": "npm:@rollup/wasm-node@^4.68.8",
+    "sass": "^1.108.2",
+    "typescript": "~6.0.3",
+    "vite": "^7.3.8",
+    "vue-tsc": "^3.3.14"
+  }
+}

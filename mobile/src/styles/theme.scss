@@ -1,0 +1,500 @@
+// ============================================================================
+// 地府幽冥政务中台 · 移动端主题
+// 暗色幽冥国风：黑底 #0d0f14 + 鎏金 #c9a227，辅以青碧（生）/朱砂（刑）
+// 覆盖 Vant 4 的 CSS 变量，并补充业务通用类
+// ============================================================================
+
+// ---------- 基础色板 ----------
+$ink-0: #0d0f14; // 底：幽冥墨
+$ink-1: #12161d; // 面：一级
+$ink-2: #181e27; // 面：二级
+$ink-3: #202833; // 面：三级
+$gold: #c9a227; // 鎏金：主色
+$gold-soft: #e0b86a; // 鎏金：柔
+$gold-line: rgba(201, 162, 39, 0.22);
+$teal: #4ce0c3; // 青碧：通过 / 生
+$fire: #d4553f; // 朱砂：驳回 / 刑
+$warn: #e0a33f; // 警示
+$text-0: #eae5d8; // 主文本
+$text-1: #a9b0bd; // 次文本
+$text-2: #6d7684; // 辅助文本
+
+:root {
+  // ---- Vant 4 主题变量覆盖 ----
+  --van-primary-color: #{$gold};
+  --van-success-color: #{$teal};
+  --van-danger-color: #{$fire};
+  --van-warning-color: #{$warn};
+
+  --van-text-color: #{$text-0};
+  --van-text-color-2: #{$text-1};
+  --van-text-color-3: #{$text-2};
+  --van-background: #{$ink-0};
+  --van-background-2: #{$ink-1};
+  --van-background-3: #{$ink-2};
+  --van-border-color: #{$gold-line};
+  --van-active-color: rgba(201, 162, 39, 0.12);
+  --van-gray-1: #{$ink-2};
+  --van-gray-2: #{$ink-3};
+  --van-gray-7: #{$text-1};
+  --van-radius-sm: 4px;
+  --van-radius-md: 8px;
+  --van-radius-lg: 12px;
+
+  // 单元格 / 表单
+  --van-cell-background: transparent;
+  --van-cell-text-color: #{$text-0};
+  --van-cell-value-color: #{$text-1};
+  --van-cell-border-color: rgba(255, 255, 255, 0.06);
+  --van-field-label-color: #{$text-1};
+  --van-field-input-text-color: #{$text-0};
+  --van-field-placeholder-text-color: #{$text-2};
+
+  // 导航 / 标签页
+  --van-nav-bar-background: #{$ink-1};
+  --van-nav-bar-title-text-color: #{$text-0};
+  --van-nav-bar-icon-color: #{$gold};
+  --van-nav-bar-text-color: #{$gold};
+  --van-tabs-nav-background: transparent;
+  --van-tab-text-color: #{$text-1};
+  --van-tab-active-text-color: #{$gold};
+  --van-tabs-bottom-bar-color: #{$gold};
+  --van-tabbar-background: #{rgba($ink-1, 0.96)};
+  --van-tabbar-item-text-color: #{$text-2};
+  --van-tabbar-item-active-color: #{$gold};
+  --van-tabbar-item-active-background: transparent;
+
+  // 弹层 / 按钮
+  --van-popup-background: #{$ink-1};
+  --van-dialog-background: #{$ink-1};
+  --van-dialog-message-text-color: #{$text-0};
+  --van-dialog-header-font-weight: 500;
+  --van-picker-background: #{$ink-1};
+  --van-picker-option-text-color: #{$text-0};
+  --van-button-default-background: #{$ink-2};
+  --van-button-default-color: #{$text-0};
+  --van-button-default-border-color: #{$gold-line};
+  --van-button-primary-background: #{$gold};
+  --van-button-primary-border-color: #{$gold};
+  --van-button-primary-color: #1a1508;
+  --van-button-danger-background: #{$fire};
+  --van-button-danger-border-color: #{$fire};
+
+  // ---- 业务自定义变量（供各组件样式直接引用）----
+  --m-ink-0: #{$ink-0};
+  --m-ink-1: #{$ink-1};
+  --m-ink-2: #{$ink-2};
+  --m-ink-3: #{$ink-3};
+  --m-gold: #{$gold};
+  --m-gold-soft: #{$gold-soft};
+  --m-gold-line: #{$gold-line};
+  --m-teal: #{$teal};
+  --m-fire: #{$fire};
+  --m-warn: #{$warn};
+  --m-text-0: #{$text-0};
+  --m-text-1: #{$text-1};
+  --m-text-2: #{$text-2};
+
+  // 其他
+  --van-badge-background: #{$fire};
+  --van-loading-spinner-color: #{$gold};
+  --van-toast-background: rgba(20, 24, 31, 0.94);
+  --van-toast-text-color: #{$text-0};
+  --van-empty-description-color: #{$text-2};
+}
+
+// ---------- 基础 reset ----------
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  color: $text-0;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: $ink-0;
+  background-image:
+    radial-gradient(120% 60% at 50% -10%, rgba(201, 162, 39, 0.1), transparent 60%),
+    radial-gradient(90% 50% at 100% 100%, rgba(76, 224, 195, 0.05), transparent 65%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+// ---------- 通用版式 ----------
+.m-page {
+  min-height: 100%;
+  padding: 12px 14px calc(20px + env(safe-area-inset-bottom));
+}
+
+.m-page--tabbar {
+  padding-bottom: calc(74px + env(safe-area-inset-bottom));
+}
+
+.m-serif {
+  font-family: 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  letter-spacing: 0.06em;
+}
+
+.m-gold {
+  color: $gold;
+}
+
+.m-teal {
+  color: $teal;
+}
+
+.m-fire {
+  color: $fire;
+}
+
+.m-muted {
+  color: $text-1;
+}
+
+.m-faint {
+  color: $text-2;
+  font-size: 12px;
+}
+
+.m-mono {
+  font-family: 'SF Mono', 'JetBrains Mono', Menlo, monospace;
+  letter-spacing: 0.02em;
+}
+
+.m-divider {
+  height: 1px;
+  margin: 12px 0;
+  background: linear-gradient(90deg, transparent, $gold-line, transparent);
+}
+
+// ---------- 卡片 ----------
+.m-card {
+  position: relative;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.008)),
+    $ink-1;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+
+  & + .m-card {
+    margin-top: 10px;
+  }
+
+  &--gold {
+    border-color: $gold-line;
+    background:
+      linear-gradient(180deg, rgba(201, 162, 39, 0.12), rgba(201, 162, 39, 0.02)),
+      $ink-1;
+  }
+}
+
+.m-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.m-card__title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: $text-0;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  letter-spacing: 0.08em;
+
+  &::before {
+    content: '';
+    width: 3px;
+    height: 14px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, $gold, rgba(201, 162, 39, 0.2));
+  }
+}
+
+.m-card__more {
+  color: $text-2;
+  font-size: 12px;
+}
+
+// ---------- 徽章 ----------
+.m-badge {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  height: 20px;
+  padding: 0 7px;
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  border-radius: 4px;
+  color: $gold-soft;
+  font-size: 11px;
+  line-height: 18px;
+  white-space: nowrap;
+  background: rgba(201, 162, 39, 0.1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &--teal {
+    color: $teal;
+    border-color: rgba(76, 224, 195, 0.38);
+    background: rgba(76, 224, 195, 0.1);
+  }
+
+  &--fire {
+    color: $fire;
+    border-color: rgba(212, 85, 63, 0.4);
+    background: rgba(212, 85, 63, 0.12);
+  }
+
+  &--warn {
+    color: $warn;
+    border-color: rgba(224, 163, 63, 0.4);
+    background: rgba(224, 163, 63, 0.12);
+  }
+
+  &--plain {
+    color: $text-1;
+    border-color: rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+// ---------- 统计瓦片 ----------
+.m-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.m-tile {
+  padding: 12px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
+  text-align: center;
+
+  &__value {
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: $gold;
+    font-family: 'SF Mono', 'JetBrains Mono', Menlo, monospace;
+
+    &--teal {
+      color: $teal;
+    }
+
+    &--fire {
+      color: $fire;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+    color: $text-2;
+  }
+}
+
+// ---------- 宫格入口 ----------
+.m-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px 8px;
+}
+
+.m-grid__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+  color: $text-1;
+  font-size: 12px;
+  text-decoration: none;
+  border-radius: 8px;
+
+  &:active {
+    background: rgba(201, 162, 39, 0.08);
+  }
+}
+
+.m-grid__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid $gold-line;
+  border-radius: 12px;
+  font-size: 18px;
+  color: $gold;
+  background: radial-gradient(circle at 50% 0%, rgba(201, 162, 39, 0.18), rgba(201, 162, 39, 0.03));
+}
+
+// ---------- 键值区 ----------
+.m-kv {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.m-kv__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.07);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.m-kv__key {
+  flex: 0 0 38%;
+  color: $text-2;
+  font-size: 12px;
+  word-break: break-all;
+}
+
+.m-kv__val {
+  flex: 1;
+  color: $text-0;
+  font-size: 13px;
+  word-break: break-all;
+
+  &--diff {
+    color: $gold-soft;
+  }
+}
+
+// ---------- 时间轴 ----------
+.m-timeline {
+  position: relative;
+  padding-left: 18px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    bottom: 8px;
+    left: 5px;
+    width: 1px;
+    background: linear-gradient(180deg, $gold-line, rgba(255, 255, 255, 0.06));
+  }
+}
+
+.m-timeline__item {
+  position: relative;
+  padding-bottom: 14px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -16px;
+    width: 7px;
+    height: 7px;
+    border: 1px solid $text-2;
+    border-radius: 50%;
+    background: $ink-0;
+  }
+
+  &--done::before {
+    border-color: $teal;
+    background: $teal;
+  }
+
+  &--active::before {
+    border-color: $gold;
+    background: $gold;
+    box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.16);
+  }
+
+  &--reject::before {
+    border-color: $fire;
+    background: $fire;
+  }
+}
+
+.m-timeline__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+  color: $text-0;
+}
+
+.m-timeline__body {
+  margin-top: 3px;
+  font-size: 12px;
+  color: $text-2;
+  line-height: 1.6;
+}
+
+// ---------- 空态 ----------
+.m-empty {
+  padding: 28px 0;
+  color: $text-2;
+  font-size: 13px;
+  text-align: center;
+}
+
+// ---------- Vant 局部微调 ----------
+.van-hairline--top-bottom::after,
+.van-hairline-unset--top-bottom::after {
+  border-color: rgba(255, 255, 255, 0.07);
+}
+
+.van-tabbar {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+}
+
+.van-tabs__wrap {
+  padding-bottom: 2px;
+}
+
+.van-cell {
+  padding-left: 0;
+  padding-right: 0;
+  background: transparent;
+}
+
+.van-cell-group--inset {
+  margin: 0;
+  background: transparent;
+}
+
+.van-field__control {
+  caret-color: $gold;
+}
+
+.van-toast {
+  border: 1px solid $gold-line;
+}
