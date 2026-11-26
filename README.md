@@ -1,14 +1,3 @@
----
-AIGC:
-    Label: "1"
-    ContentProducer: 001191440300708461136T1XGW3
-    ProduceID: 9050c8968b179f6a41587a8c58f33663_3608862ae8a911f1aa8b525400dc9a98
-    ReservedCode1: grQ2UrgP1nlYqWQbAAa0y4soS/ImcnYE6UCtkWzGS+HBk9NPnj+v+yBBerRckKP9ggeueDJkujetOiHIuSYy6iiwF9JX4AmiSxCLbF4jfMKsrMzg1svJ+goCTDh4jqtZlNQor9t7444lgrcDIZDBsj0R4wcJs+6SOP36gImFKoCfl5RZqfmVkZ6v0Kw=
-    ContentPropagator: 001191440300708461136T1XGW3
-    PropagateID: 9050c8968b179f6a41587a8c58f33663_3608862ae8a911f1aa8b525400dc9a98
-    ReservedCode2: grQ2UrgP1nlYqWQbAAa0y4soS/ImcnYE6UCtkWzGS+HBk9NPnj+v+yBBerRckKP9ggeueDJkujetOiHIuSYy6iiwF9JX4AmiSxCLbF4jfMKsrMzg1svJ+goCTDh4jqtZlNQor9t7444lgrcDIZDBsj0R4wcJs+6SOP36gImFKoCfl5RZqfmVkZ6v0Kw=
----
-
 # 地府生死铺后台管理系统（difu-admin）
 
 ## ⚠️ 许可、品牌与免责说明（必读）
