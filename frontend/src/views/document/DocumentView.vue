@@ -415,7 +415,7 @@ onMounted(() => {
         </div>
         <div class="dc-form__row">
           <label>标题</label>
-          <el-input v-model="form.title" size="small" placeholder="留空则按类型与亡魂自动生成" />
+          <el-input v-model="form.title" size="small" placeholder="留空则按类型与亡魂自动编号" />
         </div>
         <div class="dc-form__row">
           <label>关联亡魂</label>
